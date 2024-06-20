@@ -15,7 +15,7 @@ sudo -H pip3 install -r requirements.txt
 mv config.toml.example config.toml
 
 ## Create service files and start
-bash indep_node_alarm_service.sh
+bash indep_alarm_service.sh
 
 sudo systemctl daemon-reload
 
