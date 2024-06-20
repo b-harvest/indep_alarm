@@ -1,0 +1,49 @@
+[info]
+hostname              = ""
+sleep_sec             = 600         # in second
+root_disk_trigger     = 10          # root disk
+data_disk_trigger     = 30          # data disk
+
+[info.pagerduty]
+target_ep             = ""          # selected escalation policy
+
+ep_ddo                = ""
+ep_jin                = ""
+ep_lucas              = ""
+ep_qmin               = ""
+ep_balance            = ""
+
+href                  = ""
+api_key               = ""
+service_key           = ""
+
+[info.slack]
+bot_token             = ""
+channel_critical      = ""
+channel_high          = ""
+channel_realyer_canto = ""
+
+[info.telegram]
+bot_token             = ""
+chatid_medium         = ""
+chatid_low            = ""
+chatid_info           = ""
+chatid_chainlink      = ""
+chatid_relayer        = ""
+chatid_login          = ""
+chatid_job            = ""
+
+[daemons]
+
+[daemons.akash]
+rpc                   = "http://localhost:26657"
+validator_hex_address = "test"
+missing_trigger       = 10
+
+[daemons.crescent]
+rpc                   = "http://localhost:26657"
+validator_hex_address = "test"
+missing_trigger       = 15
+
+
+
