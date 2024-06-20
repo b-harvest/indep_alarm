@@ -8,6 +8,7 @@ from aiohttp import web
 import requests # pip3 install requests
 import toml     # pip3 install tomli
 import pypd     # pip3 install pypd
+import signal
 from pathlib import Path
 
 from urllib3.util.retry import Retry
@@ -259,7 +260,7 @@ async def server():
   # 종료 시그널 핸들러 등록
   signals = (signal.SIGINT, signal.SIGTERM)
   for s in signals:
-    loop.add_signal_handler(s, lambda s=s: asyncio.create_task(shutdown(s, loop)))
+    loop.add_signal_handler(s, lambda s=s: asyncio.create_task(shutdown(s, loop, stop_event)))
 
   # 웹 서버를 계속 실행
   try:
