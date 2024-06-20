@@ -5,8 +5,8 @@ cosmos-sdk based alert program inside node with free disk check, height stuck
 ## TL; DR
 
 ```bash
-git clone https://github.com/b-harvest/indep_alarm.git
-cd indep_alarm
+git clone https://github.com/b-harvest/indep_alarm.git ddo_scripts
+cd ddo_scripts
 
 sudo apt-get -y install python3-pip
 sudo -H pip3 install -r requirements.txt
