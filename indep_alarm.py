@@ -39,17 +39,10 @@ def main(stop_event):
   pd = config['info']['pagerduty']
   sl = config['info']['slack']
 
-  chains = list(config['daemons'].keys())
-
   node_list = []
 
-  for chain in chains:
-    chain_name = chain['chain']
-    rpc_url = chain['rpc']
-    validator_hex_address = chain['validator_hex_address']
-    block_missing_threshold = chain['block_missing_threshold']
-
-    node_list.append(NodeInfo(hostname, chain_name, rpc_url, validator_hex_address, block_missing_threshold, sleep_sec, tg, pd, sl)) 
+  for (daemon, info) in config['daemons'].items():
+    node_list.append(NodeInfo(hostname, daemon, info['rpc'], info['validator_hex_address'], info['missing_trigger'], sleep_sec, tg, pd, sl))
 
   while not stop_event.is_set():
 
