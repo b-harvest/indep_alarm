@@ -163,7 +163,7 @@ class NodeInfo:
       # Critical - PagerDuty - Slack
       target_ep = self.pd["target_ep"]
       send_pd_alarm(self.pd[target_ep], alarm_content)
-      send_slack_alarm(self.sl["bot_token"], self.sl["channel_critical"], alarm_content)
+      send_slack_alarm(self.sl["bot_token"], self.sl["channel_high"], alarm_content)
 
 
 ## Functions
